@@ -1,3 +1,5 @@
+<!-- This file has been modified by Ange on 24 August 2010 to add endpoint selection --> 
+<!-- Original version is from http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1137 --> 
 <html>
     <head>
         <title>Amazon SimpleDB Scratchpad</title>
@@ -40,8 +42,18 @@
                                     type="text"
                                     id="AWSSecretAccessKey"
                                     name="AWSSecretAccessKey"/>
+                            </td><td align="right"><strong>Endpoint:</strong>&nbsp;&nbsp;&nbsp;
+                            <select
+                             style=" border: 1px solid #6699cc;  color:#006699; width: 85px; height: 18px; font-size: 13px" name="EndPoint" is="EndPoint">
+                                    <option value="https://sdb.amazonaws.com" name="US-EAST">US-East</option>
+                        <option value="https://sdb.us-west-1.amazonaws.com" name="US-West">US-West</Option>
+                        <option value="https://sdb.eu-west-1.amazonaws.com" name="EU-West">EU-West</Option>
+                        <option value="https://sdb.ap-southeast-1.amazonaws.com" name="AP-East">AP-East</Option>
+                                </select>
+	  
                             </td>
-                            <td align="right"><strong>Explore API:</strong>&nbsp;&nbsp;&nbsp;
+
+                            <td align="right"><strong>API:</strong>&nbsp;&nbsp;&nbsp;
                             <select 
                              onchange="if (this.options[this.selectedIndex].value != '') window.open(this.options[this.selectedIndex].value + '.html','main');"
                              style=" border: 1px solid #6699cc;  color:#006699; width: 155px; height: 18px; font-size: 13px" name="API">
@@ -72,6 +84,10 @@
             }
             function getSecretAccessKey() {
                 return document.getElementById('AWSSecretAccessKey').value;
+            
+            }
+            function getEndPoint() {
+                return document.getElementById('EndPoint').value;
             
             }
         </script>

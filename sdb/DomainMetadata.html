@@ -1,3 +1,5 @@
+<!-- This file has been modified by Ange on 24 August 2010 to add endpoint selection --> 
+<!-- Original version is from http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1137 --> 
 <html>
   <head>
     <title>Amazon SimpleDBScratchpad</title>
@@ -9,10 +11,12 @@
             var form = document.forms[0];
             var accessKeyId =  parent.navbar.getAccessKeyId();
             var secretKey =  parent.navbar.getSecretAccessKey();
-            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, "https://sdb.amazonaws.com", "2009-04-15");
+            var endPoint = parent.navbar.getEndPoint();
+            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, endPoint, "2009-04-15");
             var postFormArea = document.getElementById("PostFormArea");
             postFormArea.innerHTML = getFormFieldsFromUrl(url);
             var postForm = document.getElementById("PostForm");
+            postForm.action = endPoint;
             postForm.submit();
         }
 
@@ -20,7 +24,8 @@
             var form = document.forms[0];
             var accessKeyId =  parent.navbar.getAccessKeyId();
             var secretKey =  parent.navbar.getSecretAccessKey();
-            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, "https://sdb.amazonaws.com", "2009-04-15");
+            var endPoint = parent.navbar.getEndPoint();
+            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, endPoint, "2009-04-15");
             document.getElementById("preview").innerHTML = "<b>Signed URL:</b><p/>" + url + "<p/>";
             document.getElementById("preview").style.display = "block";
         }
@@ -29,7 +34,8 @@
             var form = document.forms[0];
             var accessKeyId =  parent.navbar.getAccessKeyId();
             var secretKey =  parent.navbar.getSecretAccessKey();
-            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, "https://sdb.amazonaws.com", "2009-04-15");
+            var endPoint = parent.navbar.getEndPoint();
+            var url = generateSignedURL("DomainMetadata",form, accessKeyId, secretKey, endPoint, "2009-04-15");
             var stringToSign = getStringToSign(url);
             document.getElementById("preview").innerHTML = "<b>String To Sign:</b><p/>" + stringToSign + "<p/>";
             document.getElementById("preview").style.display = "block";
@@ -91,7 +97,7 @@
       <div style="padding-bottom: 2px; border-bottom: 1px dashed #cccccc; width: 100%"></div>
       <center><div style="padding: 15px" class="smallLabel">Amazon SimpleDB API Version: 2009-04-15. Scratchpad generated: Thu Jul 15 15:51:04 PDT 2010  </div></center>
     </form>
-    <form id="PostForm" name="PostForm" target="_new" action="https://sdb.amazonaws.com" enctype="application/x-www-form-urlencoded" method="get">
+    <form id="PostForm" name="PostForm" target="_new" enctype="application/x-www-form-urlencoded" method="get">
       <div id="PostFormArea"></div>
     </form>
   </body>
