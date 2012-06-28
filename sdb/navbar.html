@@ -44,7 +44,7 @@
                                     name="AWSSecretAccessKey"/>
                             </td><td align="right"><strong>Endpoint:</strong>&nbsp;&nbsp;&nbsp;
                             <select
-                             style=" border: 1px solid #6699cc;  color:#006699; width: 85px; height: 18px; font-size: 13px" name="EndPoint" is="EndPoint">
+                             style=" border: 1px solid #6699cc;  color:#006699; width: 85px; height: 18px; font-size: 13px" name="EndPoint" id="EndPoint">
                                     <option value="https://sdb.amazonaws.com" name="US-EAST">US-East</option>
                         <option value="https://sdb.us-west-1.amazonaws.com" name="US-West">US-West</Option>
                         <option value="https://sdb.eu-west-1.amazonaws.com" name="EU-West">EU-West</Option>
@@ -87,7 +87,7 @@
             
             }
             function getEndPoint() {
-                return document.getElementById('EndPoint').value;
+				return document.getElementById('EndPoint').value;
             
             }
         </script>
