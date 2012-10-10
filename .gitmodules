@@ -1,0 +1,3 @@
+[submodule "assets/html"]
+	path = assets/html
+	url = git@github.com:kdi/kdi.github.com.wiki.git
