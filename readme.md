@@ -14,6 +14,8 @@ If you'd like to see an update appear on this site feel free to update the wiki 
 git submodule foreach git pull origin master
 ```
 
+---
 
+Copyright &copy; K&D Interactive - All rights Reserved
 
 
