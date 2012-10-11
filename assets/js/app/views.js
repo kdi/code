@@ -10,7 +10,7 @@ APP.Views.Main = Backbone.View.extend({
 		
 		this.template = new Showdown.converter();
 		
-		var file = _.ucfirst (options.path);
+		var file = _.ucwords (options.path);
 		$.get("assets/html/"+ file +".md", this.setup);
 
 	}, 
