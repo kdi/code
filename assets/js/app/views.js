@@ -29,7 +29,7 @@ APP.Views.Main = Backbone.View.extend({
 	processLink : function( e ){
 		e.preventDefault();
 		var el = ( e.target.tagName == "A") ?  $(e.target) : $(e.target).closest("a");
-		var href= el.attr("href").replace("./wiki", "");
+		var href= el.attr("href").replace("./wiki", "").replace("./", "");
 		// goto the new page
 		app.navigate(href, true);
 		
