@@ -27,12 +27,15 @@ APP.Views.Main = Backbone.View.extend({
 			
 	}, 
 	processLink : function( e ){
-		e.preventDefault();
+                e.preventDefault();
 		var el = ( e.target.tagName == "A") ?  $(e.target) : $(e.target).closest("a");
-		var href= el.attr("href").replace("./wiki", "").replace("./", "");
+		var url= el.attr("href");
+                // if a full http link allow the clickthrough
+                if(/(file|http).*/.test(url)) window.location = url;
+                // 'clean' all the wiki paths
+                url= url.replace("./wiki", "").replace("./", "");
 		// goto the new page
-		app.navigate(href, true);
-		
+		app.navigate(url, true);
 		
 	}
 	
