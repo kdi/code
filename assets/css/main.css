@@ -30,7 +30,7 @@ header h1 {
 
 header h1 a {
 	text-decoration: none;
-	color: #1e9fe7;
+	color: #69f;
 }
 
 header nav {
@@ -92,6 +92,10 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 #content #main {
 	width: 700px;
 	margin: 0 auto;
+}
+
+#content #main a {
+	color: #69f;
 }
 
 #content #main h1, #content #main h2 {
