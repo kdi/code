@@ -22,7 +22,7 @@ header.top {
 
 header h1 {
 	float: left;
-	width: 50%;
+	width: 200px;
 	font-size: 1.5em;
 	padding: 15px 10px;
 	
@@ -112,5 +112,24 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 	background-color: #fafafa;
 	margin: 10px 0;
 	
+}
+
+@media screen and (max-width: 800px) {
+	
+	#content #main {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	
+	header nav ul {
+		margin: 10px;
+	}
+	
+	header nav a, .button {
+		margin: 0 0 0 5px;
+	}
+	
+
 }
 
