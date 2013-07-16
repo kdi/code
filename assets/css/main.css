@@ -160,13 +160,7 @@ footer #copyright {
 	font-size: 1em;
 }
 
-#footer-h2 {
-	float: right;
-	margin: -28px 12px 0 0;
-	font-family: 'Nothing You Could Do', cursive;
-	color: #690;
-	font-size: 1em;
-}
+
 
 
 @media screen and (max-width: 800px) {
