@@ -5,10 +5,11 @@ body, html {
 	width: 100%;
 	overflow-x: hidden;
 	font: 100%/150% 'Open Sans', Helvetica, Arial, sans-serif;
-	
 }
 
 header.top {
+	position: fixed;
+	width: 100%;
 	height: 60px;
 	background-color: #fff;
 	border-bottom: #ddd solid 1px;
@@ -52,8 +53,6 @@ header nav ul li {
 	padding: 0;
 }
 
-
-
 header nav a, .button {
 	display: inline-block;
 	height: 34px;
@@ -81,15 +80,14 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 	background-color: #9c0;
 }
 
-
-
-
-
 #content {
 	clear: both;
 	width: 100%;
-	background-color: #fafafa;
-	padding: 30px 0;
+	background-color: #eef1f3;
+	padding: 100px 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.3em;
+	line-height: 155%;
 }
 #main {
 	width: 700px;
