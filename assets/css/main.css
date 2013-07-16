@@ -83,8 +83,10 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 #content {
 	clear: both;
 	width: 100%;
+	min-height: 100%;
 	background-color: #eef1f3;
-	padding: 100px 0;
+	padding: 60px 0;
+	margin-bottom: -60px;
 	/* font-family: Georgia, "Times New Roman", Times, serif; */
 	font-size: 1.2em;
 	line-height: 160%;
@@ -92,6 +94,7 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 #content #main {
 	width: 700px;
 	margin: 0 auto;
+	padding: 30px 0;
 }
 
 #content #main a {
@@ -115,8 +118,56 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 	padding: 20px;
 	background-color: #fafafa;
 	margin: 10px 0;
-	
 }
+
+footer {
+	clear: both;
+	width:100%;
+	height: 60px;
+	padding: 4px 10% 10px 10%;
+	border-top: solid 1px #fff;
+	background-color:rgba(153,204,0,.5);
+	border-top: 1px solid #e5e5e5;
+}
+
+footer h3 {
+	padding: 4px 0;
+	text-align:left;
+	color: #690;
+	font-size: 1.3em;
+}
+
+footer .column p {
+	padding-left: 0;
+}
+
+footer a, footer a:visited, footer a:link {
+	color: #808080;
+	text-decoration: none;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+
+footer a:hover {
+	color: #fff;
+}
+
+footer #copyright {
+	padding-top: 20px;
+	color: #690;
+	font-size: 1em;
+}
+
+#footer-h2 {
+	float: right;
+	margin: -28px 12px 0 0;
+	font-family: 'Nothing You Could Do', cursive;
+	color: #690;
+	font-size: 1em;
+}
+
 
 @media screen and (max-width: 800px) {
 	
