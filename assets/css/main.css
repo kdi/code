@@ -4,6 +4,41 @@
 body, html {
 	width: 100%;
 	overflow-x: hidden;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font: 100%/150% 'Open Sans', Helvetica, Arial, sans-serif;
+	
+}
+
+header.top {
+	padding: 5px 10px;
+	background-color: #fff;
+	height: 50px;
+}
+
+header h1 {
+	float: left;
+	width: 50%;
+	font-size: 1.5em;
+	
+}
+
+header h1 a {
+	text-decoration: none;
+}
+
+header nav {
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+header .nav li {
+	float: left;
+	padding: 0 10px;
+}
+
+#main {
+	clear: both;
+	width: 100%;
+	background-color: #f1f1f1;
 }
 
