@@ -85,9 +85,9 @@ header nav a:hover, header nav a.active, header nav a.selected, .button:hover {
 	width: 100%;
 	background-color: #eef1f3;
 	padding: 100px 0;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 1.3em;
-	line-height: 155%;
+	/* font-family: Georgia, "Times New Roman", Times, serif; */
+	font-size: 1.2em;
+	line-height: 160%;
 }
 #content #main {
 	width: 700px;
