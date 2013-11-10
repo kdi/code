@@ -1,0 +1,26 @@
+* {
+	font-family: helvetica, arial, sans-serif;
+	font-size: 100%;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h1, fieldset {
+	text-align: center;
+}
+
+input[type="text"] {
+	display: block;
+	margin: 12px auto;
+	font-size: 3em;
+	text-align: center;
+}
+
+input[type="submit"] {
+	display: block;
+	margin: 12px auto;
+	width: 200px;
+	height: 60px;
+}
