@@ -14,7 +14,6 @@ construct.configure(function(){
 		},
 
 		index: function(){
-			console.log("I'm inininiin");
 			this.data = new APP.Models.Asset();
 			this.layout = new APP.Layouts.Main({ data: this.data });
 		}
@@ -77,14 +76,13 @@ construct.configure(function(){
 		*/
 		postRender: function(){
 			// prerequisite
-			if( _.isEmpty( this.model.get("mesh") ) ) return;
+			if( _.isEmpty( this.model.get("sources") ) ) return;
 
 			// load model
-			var src = this.model.get("mesh").m1;
+			var src = this.model.get("sources")[0].meshes.m1;
 			//
 			//$el = $("asset").attr("src", src);
 			//$el = $("<scene><asset src='"+ src +"'></asset><camera></camera></scene>");
-			//console.log( $el );
 			this.$3d.addScene().addCamera();
 			this.$3d.add({ type: "asset", src: src });
 			//this.$3d.append($el);
