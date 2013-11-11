@@ -2,6 +2,7 @@
 
 	//construct.asset(["bin"]);
 	construct.register( construct.asset(["bin"]) );
+	construct.register( construct.input(["mouse"]) );
 
 //});
 
@@ -58,12 +59,14 @@ construct.configure(function(){
 			this.options.data.asset = asset;
 			this.options.data.fetch();
 		}
+
 	});
 
 	APP.Views.Viewer = APP.Views.Main3D.extend({
 		el: ".viewer",
 
 		options: {
+			monitorMove: true
 		},
 
 		/*
@@ -103,7 +106,34 @@ construct.configure(function(){
 				})
 			});
 			*/
+		},
+
+		mousemove: function( e ){
+			// look around
+			this.lookArround(e);
+		},
+
+		lookArround: function(e){
+
+			var mouse = this.params.get("mouse");
+			var mouseX = ( mouse.x - (window.innerWidth / 2) );
+			var mouseY = ( mouse.y - (window.innerHeight / 2) );
+			// the 3d environment is passed as target
+			//var $3d = e.target;
+			var $3d = this.$3d;
+			var multiplier = e.multiplier || 1;
+			var speed = 0.05;
+
+			// start when the active camera is set
+			if( !$3d.active.camera ) return;
+			$3d.active.camera.lookAt( $3d.active.scene.position );
+
+			$3d.active.camera.position.x += ( (mouseX * multiplier) - $3d.active.camera.position.x ) * speed;
+			$3d.active.camera.position.y += ( - (mouseY * multiplier) - $3d.active.camera.position.y ) * speed;
+		//}
+
 		}
+
 	});
 
 });
