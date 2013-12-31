@@ -9,7 +9,7 @@ $("form").submit(function( e ){
 	var now = new Date();
 	var date = formatDate( now );
 	// get a "random" suffix
-	var suffix = getSuffix( now );
+	var suffix = uniqueCode( now );
 	// format
 	id = type + date +"-"+ suffix;
 	console.log(id );
@@ -53,4 +53,25 @@ function getSuffix( now ){
 	// a three digit random number...
 	var random =parseInt(Math.random()* (999 - 100)) + 100;
 	return time + random;
+}
+
+// Source: https://gist.github.com/tracend/8203090
+function uniqueCode(){
+	var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	var ticks = (new Date()).getTime().toString();
+	var code = "";
+	for (var i = 0; i < characters.length; i += 2) {
+		if ((i + 2) <= ticks.length) {
+			var number = parseInt(ticks.substr(i, 2));
+			if (number > characters.length - 1) {
+				var one = number.toString().substr(0, 1);
+				var two = number.toString().substr(1, 1);
+				code += characters[parseInt(one)];
+				code += characters[parseInt(two)];
+			} else {
+				code += characters[number];
+			}
+		}
+	}
+	return code;
 }
