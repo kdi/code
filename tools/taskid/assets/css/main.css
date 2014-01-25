@@ -16,11 +16,13 @@ input[type="text"] {
 	margin: 12px auto;
 	font-size: 3em;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 input[type="submit"] {
 	display: block;
-	margin: 12px auto;
 	width: 200px;
 	height: 60px;
+	margin: 12px auto;
+	font-size: 2em;
 }
