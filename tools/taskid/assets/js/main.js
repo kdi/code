@@ -8,8 +8,8 @@ $("form").submit(function( e ){
 	// get the date
 	var now = new Date();
 	var date = formatDate( now );
-	// get a "random" suffix
-	var suffix = uniqueCode( now );
+	// get a "random" suffix (remove first 4 chars that are the same each day...)
+	var suffix = ( uniqueCode( now ) ).substr(4);
 	// format
 	id = type + date +"-"+ suffix;
 	console.log(id );
